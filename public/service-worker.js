@@ -1,8 +1,10 @@
 // const FILES_TO_CACHE object with file paths
+const FILES_TO_CACHE = ["/", "/index.html", "index.js", "./db.js", "./styles.css"];
 
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 
+//install
 self.addEventListener("install", function(evt){
     evt.waitUntil(
         caches.open(CACHE_NAME.then(cache => {
@@ -12,10 +14,10 @@ self.addEventListener("install", function(evt){
     );
     self.skipWaiting();
 });
-
+//activate
 self.addEventListener("activate", function(evt){
     evt.waitUntil(
-        caches.keys{}.then(keyLIst => {
+        caches.keys().then(keyList => {
             return Promise.all(
                 keyList.map(key => {
                     if(key !==CACHE_NAME && key !==DATA_CACHE_NAME){
@@ -28,7 +30,7 @@ self.addEventListener("activate", function(evt){
     );
     self.client.claim();
 })
-
+//fetch
 self.addEventListener("fetch", function(evt){
     if(evt.request.url.includes("/api/")){
         evt.respondWith(
@@ -47,9 +49,9 @@ self.addEventListener("fetch", function(evt){
         );
         return;
     }
-    evt.respondWith(
-        cache.match(evt.request).then(function(response){
-            return response || fetch (evt.request);
-        })
-    )
+    // evt.respondWith(
+    //     cache.match(evt.request).then(function(response){
+    //         return response || fetch (evt.request);
+    //     })
+    // )
 })
