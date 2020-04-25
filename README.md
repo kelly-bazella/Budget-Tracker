@@ -6,7 +6,7 @@ The purpose of the budget tracker app is so that a user can track how much money
 
 ## GIF 
 
-![]("/image/demo.gif")
+![](/image/demo.gif)
 
 ## Links
 [Heroku Link](https://budget-tracker-kelly.herokuapp.com/)
