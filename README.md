@@ -10,6 +10,11 @@ The purpose of this is to solidify my knowledge of PWAs or Progressive Web Appli
 
 The user will input a title for the transaction and the ammount. That will then be sent to a database and stored. If the user is offline the information will be stored in cache, then when there is internet connection again the cached information will be loaded into the database. 
 
+## Languages Used
+- JavaScript
+- HTML
+- CSS
+
 ## GIF 
 
 ![](demo.gif)
